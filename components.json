@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 0 0% 95%;
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 222 47% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 222 47% 14%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 47% 14%;
+    --input: 222 47% 14%;
+    --ring: 217 91% 60%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #080C14;
+    color: #F0F0F0;
+    @apply antialiased;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent;
+  }
+  .card-glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+  }
+  .card-glass-hover {
+    transition: all 0.3s ease;
+  }
+  .card-glass-hover:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.1), 0 0 60px rgba(124, 58, 237, 0.05);
+  }
+  .btn-gradient {
+    background: linear-gradient(135deg, #2563EB, #7C3AED);
+    color: white;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .btn-gradient:hover::before {
+    opacity: 1;
+  }
+  .btn-gradient span {
+    position: relative;
+    z-index: 1;
+  }
+  .btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+  }
+  .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+  .glow-orb {
+    border-radius: 50%;
+    filter: blur(80px);
+    position: absolute;
+    pointer-events: none;
+  }
+  .network-badge-eth {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60A5FA;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+  .network-badge-base {
+    background: rgba(124, 58, 237, 0.15);
+    color: #A78BFA;
+    border: 1px solid rgba(124, 58, 237, 0.3);
+  }
+  .network-badge-bnb {
+    background: rgba(234, 179, 8, 0.15);
+    color: #FCD34D;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+  }
+  .network-badge-cmc {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34D399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+  .top-border-blue {
+    border-top: 2px solid #3B82F6;
+  }
+  .top-border-violet {
+    border-top: 2px solid #7C3AED;
+  }
+  .top-border-yellow {
+    border-top: 2px solid #EAB308;
+  }
+  .top-border-green {
+    border-top: 2px solid #10B981;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #080C14;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#3B82F6, #7C3AED);
+  border-radius: 3px;
+}

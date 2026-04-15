@@ -1,1 +1,3 @@
-# ty
+{
+  "extends": "next/core-web-vitals"
+}
